@@ -1,0 +1,13 @@
+h1{
+    text-align: center;
+    color: white;
+    align-items: center;
+    margin-top: 20vh
+}
+
+body {
+    background-image: linear-gradient(79deg, purple, pink);
+    color: white;
+}
+
+
