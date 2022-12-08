@@ -23,9 +23,7 @@ export const Login = () => {
 					history("/private")
 				}
 			})
-		}else{
-			setShow(true)
-		}};
+		};
 
 	const handleError = () => {
 		alert("Please enter your user name and password")
