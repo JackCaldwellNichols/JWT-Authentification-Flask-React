@@ -8,11 +8,13 @@ export const Private = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	const history = useNavigate()
-
 	
-useEffect(() => {	
-	if(store.token && store.token != "" && store.token != undefined)actions.getMessage();
-	}, [store.token])
+
+	useEffect(() => {	
+	if(store.token){actions.getMessage()}
+
+	}, [store.token]
+	)
 
 	return (
 		<div className="text-center">
@@ -25,8 +27,8 @@ useEffect(() => {
 				</div>
 			</div>
 			) : (
-				<h1>logged out</h1>
-			)}
+				<h1>You have logged out</h1>
+			) }
 		</div>
 	);
 };
