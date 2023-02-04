@@ -12,9 +12,6 @@ export const Login = () => {
 	const [password, setPassword] = useState("")
 	const history = useNavigate()
 
-	const [show, setShow] = useState(false);
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
 
 	const handleClick = () =>{
 		if(email && password){
@@ -24,6 +21,7 @@ export const Login = () => {
 				}
 			})
 		};
+	}
 
 	const handleError = () => {
 		alert("Please enter your user name and password")
@@ -35,7 +33,7 @@ export const Login = () => {
 		<div className="login">
 			<h1>Login</h1>
 			<input type="text" placeholder="email" value = {email} onChange={(e) => setEmail(e.target.value)}/>
-				<input type="password" placeholder="password" value = {password} onChange={(e) => setPassword(e.target.value)} required/>
+			<input type="password" placeholder="password" value = {password} onChange={(e) => setPassword(e.target.value)} required/>
 				{email && password  ? (
 				<button className="btn btn-primary" 
 				onClick={handleClick}> 
@@ -57,5 +55,5 @@ export const Login = () => {
 		
 	);
 
-};
+}
 

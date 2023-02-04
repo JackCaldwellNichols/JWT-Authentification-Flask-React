@@ -51,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				};
 				try{
-				const resp = await fetch("https://3001-4geeksacade-reactflaskh-7icaqquwgz2.ws-eu77.gitpod.io/api/token", opts)
+				const resp = await fetch(process.env.BACKEND_URL+"/api/token", opts)
 				if(resp.status !== 200) {
 					alert("Invalid user"), 403
 					return false
@@ -84,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				};
 				try{
-				const resp = await fetch("https://3001-4geeksacade-reactflaskh-7icaqquwgz2.ws-eu77.gitpod.io/api/user", opts)
+				const resp = await fetch(process.env.BACKEND_URL+"/api/user", opts)
 				if(email == "" || password == "") {
 					alert ("Please enter your details")
 					return false
@@ -105,7 +105,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				try{
 					// fetching data from the backend
-					const resp = await fetch("https://3001-4geeksacade-reactflaskh-7icaqquwgz2.ws-eu77.gitpod.io/api/userinfo", opts)
+					const resp = await fetch(process.env.BACKEND_URL+"/api/userinfo", opts)
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves

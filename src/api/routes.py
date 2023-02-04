@@ -29,6 +29,7 @@ def create_token():
         access_token = create_access_token(identity=email)
         return jsonify(access_token=access_token)
 
+
 @api.route('/user', methods=['POST'])
 def add_user():
     request_body_user = request.get_json()
